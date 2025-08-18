@@ -41,7 +41,7 @@ def upload_file():
     
             try:
                 # saves text input outside of the uploads folder. need to troubleshoot.
-                with open(os.path.join(app.config['UPLOAD_FOLDER'], "job_description.txt"), "w") as desc_file:
+                with open(os.path.join(app.config['UPLOAD_FOLDER'], "job_description.txt"), "w", encoding="utf-8") as desc_file:
                     desc_file.write(job_desc)
                 # need to change how file gets renamed so that "secure_filename" actually does something
                 filename = "resume.pdf"
@@ -77,3 +77,4 @@ def file_too_large(e):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
