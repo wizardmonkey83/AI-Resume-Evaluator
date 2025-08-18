@@ -13,6 +13,7 @@ A full-stack web application meant to assess resume alignment with job descripti
 - Suggested improvements
 
 ## File Structure
+```bash
 project-root/
 │── .env # stores your API key (ignored by Git)
 │── requirements.txt # Python dependencies
@@ -24,6 +25,7 @@ project-root/
 │── static/
 │ └── style.css # styling for frontend
 │── uploads/ # temporary uploaded files (resume, job_description.txt)
+```
 
 ## Setup and Installation
 
@@ -74,3 +76,4 @@ This app will be available at: http://127.0.0.1:5000
 ## Other
 
 - Feel free to alter the prompt in utils.py to better match your career field
+
