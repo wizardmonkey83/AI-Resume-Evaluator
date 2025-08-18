@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 ### 4. Set up your .env
 - Create a file called .env in your project root. 
-- Inside of it paste: OPENAI_API_KEY=sk-yourkeyhere
+- Inside of it paste: ```OPENAI_API_KEY=sk-yourkeyhere```
 - Make sure .env is in .gitignore (never push it to GitHub)
 
 ### 5. Run the app
@@ -76,4 +76,5 @@ This app will be available at: http://127.0.0.1:5000
 ## Other
 
 - Feel free to alter the prompt in utils.py to better match your career field
+
 
