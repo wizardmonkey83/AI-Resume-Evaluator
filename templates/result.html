@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Evaluator</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <main>
+            <!-- Match Score -->
+            <section class="score">
+                <div class="match_score">
+                    <strong>{{ match_score }}/100</strong>
+                </div>
+            </section>
+
+            <section class="summary">
+                <div class="category">
+                    <!-- Summary -->
+                    <h1>Summary</h1>
+                    <p>{{ summary }}</p>
+                </div>
+            </section>
+
+            <section class="strengths">
+                <!-- Strengths -->
+                <h2>Strengths</h2>
+                <div class="category">
+                    {% for strength in strengths %}
+                    <p>{{ strength }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+                <!-- Gaps -->
+            <section class="gaps">
+                <h2>Gaps</h2>
+                <div class="category">
+                    {% for gap in gaps %}
+                    <p>{{ gap }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+                <!-- Dealbreakers -->
+            <section class="dealbreakers">
+                {% if dealbreakers %}
+                <h2>Dealbreakers</h2>
+                <div class="category">
+                    {% for dealbreaker in dealbreakers %}
+                    <p>{{ dealbreaker }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </section>
+
+                <!-- Must haves -->
+            <section class="must_haves">
+                <h2>Must Haves</h2>
+                {% for item in must_haves_assessed %}
+                <div class="multi_category">
+                    <strong>Requirement:</strong> {{ item.requirement }}<br>
+                    <strong>Status:</strong> {{ item.status }}<br>
+                    {% if item.evidence %}
+                    <strong>Evidence:</strong> {{ item.evidence }}
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </section>
+
+                <!-- Skills -->
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="multi_category">
+                    {% for s in skills.matched %}
+                    <strong>Matched:</strong> {{ s }}<br>
+                    {% endfor %}
+
+                    {% if skills.related %}
+                    {% for s in skills.related %}
+                    <strong>Related:</strong> {{ s }}<br>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% for s in skills.missing %}
+                    <strong>Missing:</strong> {{ s }}
+                    {% endfor %}
+                </div>
+            </section>
+
+                <!-- Experience -->
+            <section class="experience"> 
+                {% if experience_summary %}
+                <h2>Experience</h2>
+                <div class="multi_category">
+                    <strong>Years Overall:</strong> {{ experience_summary.years_overall }}<br>
+                    <strong>Years in Role/Level:</strong> {{ experience_summary.years_in_role_or_level }}
+                </div>
+                {% endif %}
+            </section>
+
+                <!-- Education -->
+            <section class="education">
+                <h2>Education</h2>
+                <div class="category">
+                    <p>{{ education_fit }}</p>
+                </div>
+            </section>
+
+                <!-- constraints -->
+            <section class="constraints">
+                {% if constraints %}
+                <h2>Constraints</h2>
+                <div class="multi_category">
+                    <strong>Location Match:</strong> {{ constraints.location_match }}<br>
+                    <strong>Work Authorization Match:</strong> {{ constraints.work_auth_match }}<br>
+                    <strong>Clearance Match:</strong> {{ constraints.clearance_match }}
+                </div>
+                {% endif %}
+            </section>
+
+                <!-- Improvements to make -->
+            <section class="improvements">
+                <h2>Improvements to Make</h2>
+                <div class="category">
+                    {% for improvement in improvements_to_make %}
+                    <p>{{ improvement }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+        
+        </main>
+    </div>
+</body>
+</html>

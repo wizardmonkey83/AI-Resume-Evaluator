@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Evaluator</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+    <body>
+        <div class="index-container">
+            <form action ="/index" method="POST" enctype="multipart/form-data">
+                <h1>Welcome to the brand new Resume Evaluator</h1>
+                <h2>Enter the Job's Description</h2>
+                <textarea name="job_description" placeholder="Paste Here..."></textarea>
+                <h2>Upload your Resume (pdf)</h2>
+                <p><input type="file" id="resume" name="resume" /></p>
+                <p><input type="submit" value="Submit" /></p>
+            </form>
+        </div>
+    </body>
+</html>
